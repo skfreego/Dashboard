@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run drive_to_menu_stream1.py
