@@ -263,7 +263,7 @@ def main():
             st.write("No CSV files found in folder.")
 
         # Pause for 30 seconds before checking for new files
-        time.sleep(30)
+        time.sleep(3000)
 
 
 if __name__ == "__main__":
