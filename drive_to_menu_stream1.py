@@ -198,39 +198,24 @@ def display_map(df):
     st.subheader(f"4.Active Devices: {active_records} ")
 
     st.subheader(f"5.Location of Active Device: {active_locations_names} ")
+    
+    
+def display_unknown_macid(df):
+    if 1 in df['Unknown Mac ID'].unique():
+        st.warning('Yes')
 
+def display_no_data(df):
+    if 1 in df['No Data'].unique():
+        st.warning(1)
 
-# Define main function to run Streamlit app
-# def main():
-#
-#     folder_id = '1CU1NdgBVRMosEulzkB-HXUFJJM2Wl6ij'
-#     if folder_id:
-#         file_list = read_csv_from_drive(folder_id)
-#         if file_list:
-#             st.write(f"Found {len(file_list)} CSV file(s) in folder.")
-#             for file_name, df in file_list:
-#                 # Display file name
-#
-#                 with filename_container:
-#                     st.write(f"File: {file_name}")
-#
-#                 # Display summary statistics and map in tabs
-#
-#                 with tabs_container:
-#                     tabs = st.tabs(["Summary Statistics", "Map"])
-#                     with tabs[0]:
-#                         display_summary_statistics(df)
-#                     with tabs[1]:
-#                         display_map(df)
-#
-#                 # Pause for 30 seconds before displaying next file
-#                 time.sleep(30)
-#         else:
-#             st.write("No CSV files found in folder.")
-#
-#
-# if __name__ == "__main__":
-#     main()
+def display_data_unchanged(df):
+    if 1 in df['Data Unchanged'].unique():
+        st.warning(1)
+
+def display_data_dead(df):
+    if 1 in df['Data Dead'].unique():
+        st.warning(1)
+
 
 # Define main function to run Streamlit app
 def main():
@@ -250,19 +235,27 @@ def main():
                     st.write(f"File: {file_name}")
 
                 # Display summary statistics and map in tabs
-                with tabs_container:
-                    tabs = st.tabs(["Summary Statistics", "Map"])
+                 with tabs_container:
+                    tabs = st.tabs(["Summary Statistics", "Map", "Unknown Mac ID", "No Data", "Data Unchanged", "Data Dead"])
                     with tabs[0]:
                         display_summary_statistics(df)
                     with tabs[1]:
                         display_map(df)
+                    with tabs[2]:
+                        display_unknown_macid(df)
+                    with tabs[3]:
+                        display_no_data(df)
+                    with tabs[4]:
+                        display_data_unchanged(df)
+                    with tabs[5]:
+                        display_data_dead(df)
 
                 # Pause for 30 seconds before displaying next file
                 time.sleep(30)
         else:
             st.write("No CSV files found in folder.")
 
-        # Pause for 30 seconds before checking for new files
+        # Pause for 3000 seconds before checking for new files
         time.sleep(3000)
 
 
