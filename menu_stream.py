@@ -23,7 +23,7 @@ st.set_page_config(**default_config)
 
 # Define constants for Google Drive API
 SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
-SERVICE_ACCOUNT_FILE = 'fetch-url-384806-32bff5946d0d.json'
+SERVICE_ACCOUNT_FILE = '/home/suvin/PycharmProjects/pythonProject/Project/Google_Drive/Google_Drive_Final/fetch-url-384806-32bff5946d0d.json'
 
 st.title("DATA DASHBOARD & LIVE LOCATIONS")
 # Create a Streamlit container to display the results
@@ -201,26 +201,33 @@ def display_map(df):
 
 
 def display_unknown_macid(df):
-    if 1 in df['Unknown Mac ID'].unique():
+    if any(value == 1 for value in df['Unknown Mac ID']):
         st.warning('Yes')
+    else:
+        st.warning('No')
 
 
 def display_no_data(df):
-    if 1 in df['No Data'].unique():
+    if any(value == 1 for value in df['No Data']):
         st.warning(1)
+    else:
+        st.warning(0)
 
 
 def display_data_unchanged(df):
-    if 1 in df['Data Unchanged'].unique():
+    if any(value == 1 for value in df['Data Unchanged']):
         st.warning(1)
+    else:
+        st.warning(0)
 
 
 def display_data_dead(df):
-    if 1 in df['Data Dead'].unique():
+    if any(value == 1 for value in df['Data Dead']):
         st.warning(1)
+    else:
+        st.warning(0)
 
-
-# Define main function to run Streamlit app
+# Define main fction to run Streamlit app
 def main():
     folder_id = '1CU1NdgBVRMosEulzkB-HXUFJJM2Wl6ij'
     file_list = []
