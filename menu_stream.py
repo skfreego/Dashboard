@@ -23,7 +23,7 @@ st.set_page_config(**default_config)
 
 # Define constants for Google Drive API
 SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
-SERVICE_ACCOUNT_FILE = '/home/suvin/PycharmProjects/pythonProject/Project/Google_Drive/Google_Drive_Final/fetch-url-384806-32bff5946d0d.json'
+SERVICE_ACCOUNT_FILE = 'fetch-url-384806-32bff5946d0d.json'
 
 st.title("DATA DASHBOARD & LIVE LOCATIONS")
 # Create a Streamlit container to display the results
