@@ -238,6 +238,8 @@ def main():
             # st.write(f"Found {len(new_files)} new CSV file(s) in folder.")
 
         if file_list:
+            file_list = sorted(file_list, key=lambda x: x[0])
+            
             for file_name, df in file_list:
                 # Display file name
                 with filename_container:
