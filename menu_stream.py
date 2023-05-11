@@ -229,7 +229,7 @@ def display_data_dead(df):
 
 # Define main fction to run Streamlit app
 def main():
-    folder_id = '1CU1NdgBVRMosEulzkB-HXUFJJM2Wl6ij'
+    folder_id = '1pdvAC2thwpb2EK6J3Cj8LzkimxD8SI33'
     file_list = []
     if folder_id:
         new_files = read_csv_from_drive(folder_id)
