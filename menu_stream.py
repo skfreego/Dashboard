@@ -307,7 +307,8 @@ st.title("DATA DASHBOARD & LIVE LOCATIONS")
 filename_container = st.empty()
 tabs_container = st.empty()
 
-interval_seconds = 35
+interval_seconds = 30
+interval_seconds_new = 5000
 total_records = 0
 processed_file_ids = []
 
@@ -528,7 +529,7 @@ def main():
             st.write("No CSV files found in folder.")
 
         # Pause for 3000 seconds before checking for new files
-        time.sleep(interval_seconds)
+        time.sleep(interval_seconds_new)
 
 
 if __name__ == "__main__":
