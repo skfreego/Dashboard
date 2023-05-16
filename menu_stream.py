@@ -372,6 +372,9 @@ def display_summary_statistics(df):
     mac_stats = df[['No', 'Mac ID', 'Location', 'Average Interval', 'Maximum Interval',
                     'Minimum Interval', 'Last Time IST', 'Active', 'Battery', 'F/w Version']].reset_index(
         drop=True)
+    # Replace null values in 'Battery' and 'F/w Version' columns with a placeholder
+    mac_stats['Battery'].fillna('', inplace=True)
+    mac_stats['F/w Version'].fillna('', inplace=True)
     mac_stats.index += 1
 
     # Display the updated results
