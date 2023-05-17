@@ -443,7 +443,7 @@ def display_map(df):
     # Display the updated results
 
     st.subheader("Live map of locations")
-    folium_static(m, width=900, height=1100)
+    folium_static(m, width=1000, height=1300)
 
     st.subheader(f"1.Total Records: {int(total_records1)}")
 
