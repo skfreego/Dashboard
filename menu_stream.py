@@ -571,7 +571,7 @@ filename_container = st.empty()
 tabs_container = st.empty()
 
 interval_seconds = 35
-interval_seconds_new = 60
+interval_seconds_new = 600
 total_records = 0
 processed_file_ids = []
 
@@ -809,8 +809,8 @@ def display_data_dead(df):
 
 
 def main():
-    folder_id = '1pdvAC2thwpb2EK6J3Cj8LzkimxD8SI33'   # Suvin's processed_csv folder
-    # folder_id = '1CU1NdgBVRMosEulzkB-HXUFJJM2Wl6ij'     # 1CU1NdgBVRMosEulzkB-HXUFJJM2Wl6ij Fetched folder
+#     folder_id = '1pdvAC2thwpb2EK6J3Cj8LzkimxD8SI33'   # Suvin's processed_csv folder
+    folder_id = '1CU1NdgBVRMosEulzkB-HXUFJJM2Wl6ij'     # 1CU1NdgBVRMosEulzkB-HXUFJJM2Wl6ij Fetched folder
     # folder_id = '1G4FnXmCN2Els0KqI0eG3vE66hpohEspl'   # Kiran's processed folder
 
     last_processed_file = None  # Track the last processed file
