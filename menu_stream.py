@@ -416,7 +416,7 @@ def display_map(df):
     # m = folium.Map(location=[df['Latitude'][0], df['Longitude'][0]], zoom_start=4)
 
     # Create a map object centered at the coordinates of India
-    m = folium.Map(location=[20.5937, 78.9629], zoom_start=6)
+    m = folium.Map(location=[20.5937, 78.9629], zoom_start=5.5)
     # folium.Popup('India', parse_html=True).add_to(m)
 
     # Create a marker cluster for the locations
@@ -443,7 +443,7 @@ def display_map(df):
     # Display the updated results
 
     st.subheader("Live map of locations")
-    folium_static(m, width=1000, height=1300)
+    folium_static(m, width=1000, height=1000)
 
     st.subheader(f"1.Total Records: {int(total_records1)}")
 
